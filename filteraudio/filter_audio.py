@@ -1,12 +1,12 @@
 """
-Profanity Remover
+Filter Audio
 
 This Python script uses speech recognition and audio manipulation
-to censor profanity in an audio file.
-It transcribes the audio, searches for profanity keywords, and replaces them with asterisks.
-The script then applies silence to the original audio file based on the location of
-profanity, effectively "muting" profane sections.
-The output is a new audio file with profanity silenced.
+to remove fillter words in an audio file.
+It transcribes the audio, searches for noise words as identified by whisper, 
+and splits the file based on the timestamps in those words in multiple segments. 
+It later merges all the segments without noise and merge them in a new single file, 
+free of filler words.
 """
 
 import argparse
